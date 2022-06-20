@@ -1,0 +1,191 @@
+ <!-- <div class="container-fluid mt-5">
+    <H4>Top Headlines</H4>
+    <div class="row">
+
+        <div *ngFor="let item of topheadingDisplay | slice:0:6; let i = index">
+            <div class="box">
+                <img src="{{$any(item).urlToImage}}" width="100%">
+                <h5 class="mt-2 mb-2">{{$any(item).title}}</h5>
+                <a href="{{$any(item).url}}" target="_blank" class="btn btn-primary btn-sm">Read More </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div> 
+ -->
+
+
+ 
+ 
+ 
+ <!-- <div class='item'  *ngFor="let item of topheadingDisplay | slice:0:6; let i = index" attr.data-link='{{$any(item).url}}'>
+    <img src='{{$any(item).urlToImage}}' style='padding-top: 5px;padding-left: 1px;padding-bottom: 5px;padding-right: 5px;height: 88%;width: 25%;border-radius: 10px; float:left;'>
+    <p>
+      <strong>
+        <a href='{{$any(item).url}}' title='{{$any(item).title}}'>
+            {{$any(item).title}}
+        </a>
+      </strong>
+      <br>
+      <small><em>Written by {{$any(item).author}}</em></small>
+    </p>
+    <p>
+        {{$any(item).description}}
+    </p>
+  </div> -->
+
+
+  <!DOCTYPE html>
+  <html>
+  <title>Movie Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  
+  <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+          font-family: "Raleway", sans-serif
+      }
+  </style>
+  
+  <body class="light-grey">
+  
+      <!-- w3-content defines a container for fixed size centered content, 
+  and is wrapped around the whole page content, except for the footer in this example -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+  
+  
+      
+  
+  
+          
+      
+  
+      <!-- Header -->
+      <header class="w3-container w3-center w3-padding-32">
+          <h1><b>News Now</b></h1>
+          <p>All News <span class="w3-tag">All the Time</span></p>
+      </header>
+  
+      <!-- Grid -->
+      <div class="w3-row">
+       
+          <!-- Blog entries -->
+          <div *ngFor="let item of topheadingDisplay.slice(2, 3);">
+          <div class="w3-col l8 s12">
+              <!-- Blog entry -->
+              
+              <div class="w3-card-4 w3-margin w3-white">
+                  <img src="{{$any(item).urlToImage}}"
+                      alt="Nature" style="width:100%">
+                  <div class="w3-container">
+                      <h3><b>{{$any(item).title}}</b></h3>
+                      <h5>{{$any(item).description}} <span class="w3-opacity"></span></h5>
+                  </div>
+  
+                  <div class="w3-container">
+                      <p>{{$any(item).description}}</p>
+                      <div class="w3-row">
+                          <div class="w3-col m8 s12">
+                            <a href="{{$any(item).description}}" target="_blank" class="btn btn-primary btn-sm">Read More </a>
+                              
+                          </div>
+                          <div class="w3-col m4 w3-hide-small">
+                              <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span
+                                          class="w3-tag">0</span></span></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <hr>
+  
+              <!-- Blog entry -->
+             
+              <!-- END BLOG ENTRIES -->
+          </div>
+  
+          <!-- Introduction menu -->
+          <div class="w3-col l4">
+              <!-- About Card -->
+              <div *ngFor="let item of healthDisplay | slice:0:1; let i = index">
+              <div class="w3-card w3-margin w3-margin-top">
+                  <img src="{{$any(item).urlToImage}}" style="width:100%">
+                  <div class="w3-container w3-white">
+                      <h4><b>Latest Health News</b></h4>
+                      <p>{{$any(item).description}}</p>
+                  
+              </div>
+              <hr>
+              </div>
+  
+              <!-- Posts -->
+
+              <div class="w3-card w3-margin">
+                  <div class="w3-container w3-padding">
+                      <h4>Entertainment Articles</h4>
+                  </div>
+                  <div *ngFor="let item of entertainmentDisplay | slice:0:4; let i = index">
+                  <ul class="w3-ul w3-hoverable w3-white">
+                      <li class="w3-padding-16">
+                          <img src="{{$any(item).urlToImage}}"
+                              alt="Image" class="w3-left w3-margin-right" style="width:55px">
+                          <!-- <span class="w3-large" >{{$any(item).title}}</span> -->
+                          <a href="{{$any(item).url}}" style="text-decoration: none"><span class="w3-medium">{{$any(item).title}}</span></a>
+                          
+                          
+                      </li>
+                      
+  
+                  </ul>
+              </div>
+              <hr>
+  
+              <!-- Labels / tags -->
+              <div class="w3-card w3-margin">
+                <div class="w3-container w3-padding">
+                    <h4>Tags</h4>
+                </div>
+                <div class="w3-container w3-white">
+                    <p>
+        
+                        
+        
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="entertainment">Entertainment</span> 
+        
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="tech">Tech</span> 
+        
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="health">Health</span> 
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="business">Business</span> 
+        
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="">Top Headlines</span> 
+                    </p>
+                </div>
+           
+        
+              </div>
+              <!-- END Introduction Menu -->
+          </div>
+  
+          <!-- END GRID -->
+      </div><br>
+  
+      <!-- END w3-content -->
+      
+          </div>
+          </div>
+     
+  
+ 
+  

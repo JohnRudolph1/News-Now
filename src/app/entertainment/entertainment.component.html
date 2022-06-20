@@ -1,0 +1,161 @@
+
+
+
+  <!DOCTYPE html>
+  <html>
+  <title>Entertainment News</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  
+  <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+          font-family: "Raleway", sans-serif
+      }
+  </style>
+  
+  <body class="light-grey">
+  
+      <!-- w3-content defines a container for fixed size centered content, 
+  and is wrapped around the whole page content, except for the footer in this example -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+  
+  
+      
+  
+  
+          
+      
+  
+      <!-- Header -->
+      <header class="w3-container w3-center w3-padding-32">
+          <h1><b>Top Entertainment News</b></h1>
+          <p>All Entertainment <span class="w3-tag">All the Time</span></p>
+      </header>
+  
+      <!-- Grid -->
+      <div class="w3-row">
+       
+          <!-- Blog entries -->
+          <div *ngFor="let item of entertainmentDisplay.slice(2, 3);">
+          <div class="w3-col l8 s12">
+              <!-- Blog entry -->
+              
+              <div class="w3-card-4 w3-margin w3-white">
+                  <img src="{{$any(item).urlToImage}}"
+                      alt="Nature" style="width:100%">
+                  <div class="w3-container">
+                    <a href="{{$any(item).url}}" style="text-decoration: none"><h3><b>{{$any(item).title}}</b></h3></a>
+                      <h5>{{$any(item).description}} <span class="w3-opacity"></span></h5>
+                      
+                  </div>
+  
+                  <div class="w3-container">
+                      
+                      <div class="w3-row">
+                          
+                          
+                      </div>
+                  </div>
+              </div>
+              <hr>
+  
+              <!-- Blog entry -->
+             
+              <!-- END BLOG ENTRIES -->
+          </div>
+  
+          <!-- Introduction menu -->
+          <div class="w3-col l4">
+              <!-- About Card -->
+              <div *ngFor="let item of entertainmentDisplay.slice(3, 4);">
+              <div class="w3-card w3-margin w3-margin-top">
+                  <img src="{{$any(item).urlToImage}}" style="width:100%">
+                  <div class="w3-container w3-white">
+                      <h4><b>Latest Entertainment News</b></h4>
+                      <a href="{{$any(item).url}}" style="text-decoration: none"><p>{{$any(item).description}}</p></a>
+                  
+              </div>
+              <hr>
+              </div>
+
+              <!-- Posts -->
+
+              <div class="w3-card w3-margin">
+                  <div class="w3-container w3-padding">
+                      <h4>Trending Articles</h4>
+                  </div>
+                  <div *ngFor="let item of entertainmentDisplay | slice:0:4; let i = index">
+                  <ul class="w3-ul w3-hoverable w3-white">
+                      <li class="w3-padding-16">
+                          <img src="{{$any(item).urlToImage}}"
+                              alt="Image" class="w3-left w3-margin-right" style="width:55px">
+                          <!-- <span class="w3-large" >{{$any(item).title}}</span> -->
+                          <a href="{{$any(item).url}}" style="text-decoration: none"><span class="w3-medium">{{$any(item).title}}</span></a>
+                          
+                          
+                      </li>
+                      
+  
+                  </ul>
+              </div>
+              <hr>
+              </div>
+              <!-- Labels / tags -->
+              
+  
+              <!-- END Introduction Menu -->
+          </div>
+  
+          <!-- END GRID -->
+      </div><br>
+  
+      <!-- END w3-content -->
+      
+      <div class="container-fluid mt-5">
+        <H4>Entertainment Headlines</H4>
+        <div class="row">
+    
+            <div *ngFor="let d of entertainmentDisplay" class="col-lg-3 mt-3 mt-b">
+                <div class="box">
+                    <img src="{{d.urlToImage}}" width="100%">
+                    <h5 class="mt-2 mb-2">{{d.title}}</h5>
+                   
+                    <a href="{{d.url}}" target="_blank" class="btn btn-primary btn-sm">Read More </a><br><br>
+                   
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <div class="w3-card w3-margin">
+        <div class="w3-container w3-padding">
+            <h4>Tags</h4>
+        </div>
+        <div class="w3-container w3-white">
+            <p>
+
+                
+
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="business">Business</span> 
+
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="tech">Tech</span> 
+
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="health">Health</span> 
+
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom"routerLink="">Top Headlines</span> 
+            </p>
+        </div>
+    </div>
